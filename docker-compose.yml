@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  pong-io:
+    container_name: pong-io
+    build: ./
+    ports:
+      - 1234:1234
+    volumes:
+      - ./:/var/www
+
+networks:
+  default:
+    external:
+      name: pong-io
