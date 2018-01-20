@@ -15,4 +15,4 @@ RUN apt-get update && apt-get install -y \
 RUN rm -fR /usr/local/bin/yarn && npm install -g yarn
 RUN yarn global add parcel-bundler
 
-CMD parcel index.html || tail -f /dev/null
+CMD tail -f /dev/null
