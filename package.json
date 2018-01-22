@@ -1,9 +1,0 @@
-{
-  "name": "pong.io",
-  "version": "0.0.1",
-  "description": "a pong game written with javascript",
-  "main": "index.js",
-  "repository": "pong.io",
-  "author": "CognitiveHacker",
-  "license": "MIT"
-}
