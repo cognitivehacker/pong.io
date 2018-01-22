@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js -p",
-    "server": "webpack-dev-server --inline --hot --watch",
-    "livereload": "webpack --watch"
+    "watch": "webpack --config webpack.config.js -p --watch",
+    "server": "webpack-dev-server --output-public-path=/build/ --hot --watch-poll"
   }
 }

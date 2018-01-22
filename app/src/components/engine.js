@@ -40,7 +40,7 @@ GameEngine.prototype = {
 }
 
 GameEngine.init = function(){
-  this.CANVAS_COLOR = "green"
+  this.CANVAS_COLOR = "black"
   this.FRAMES_PER_SECOND = 30
   this.CANVAS_WIDTH = 800
   this.CANVAS_HEIGHT = 600

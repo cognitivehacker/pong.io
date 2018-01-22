@@ -13,7 +13,9 @@ module.exports = {
   },
   devServer: {
     contentBase: __dirname + "/app/",
-    inline: true,
+    compress: true,
+    hot: true,
+    inline: true, // live reload
     host: '0.0.0.0',
     port: 8080,
   },
