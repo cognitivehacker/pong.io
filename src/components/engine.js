@@ -16,13 +16,10 @@ var requestAnimationFrame,
 
 GameEngine.prototype = {
   render: function(){
-    this.animationFrame(this.gameLoop)
-  },
-  gameLoop: function(){
     var gameloopObj = new GameEngine.init()
     gameloopObj.clearEverything()
     gameloopObj.drawEverything()
-    gameloopObj.animationFrame(gameloopObj.gameLoop)
+    gameloopObj.animationFrame(gameloopObj.render)
   },
   clearEverything: function(){
     this.CANVAS_CONTEXT.clearRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT)
