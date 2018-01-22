@@ -32,7 +32,7 @@ var Listeners = {
     if (keyID === 32) { // Spacebar
       e.preventDefault()
     }
-    console.log("PLAYER POSITION", player.posY)
+    //console.log("PLAYER POSITION", player.posY)
   }
 }
 
