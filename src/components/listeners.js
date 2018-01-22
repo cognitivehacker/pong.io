@@ -1,7 +1,12 @@
 var Listeners = {
   addListeners: function(){
-    document.addEventListener("keydown", function(e) {Listeners.checkKey(e, window.PLAYER_ONE)}, false)
+    // PLAYER ONE
     document.addEventListener("keyup", function(e) {Listeners.checkKey(e, window.PLAYER_ONE)}, false)
+    document.addEventListener("keydown", function(e) {Listeners.checkKey(e, window.PLAYER_ONE)}, false)
+
+    // PLAYER TWO
+    document.addEventListener("keyup", function(e) {Listeners.checkKey(e, window.PLAYER_TWO)}, false)
+    document.addEventListener("keydown", function(e) {Listeners.checkKey(e, window.PLAYER_TWO)}, false)
   },
   outOfBounds: function(player){
     if (player.posY > 500) player.posY = 500

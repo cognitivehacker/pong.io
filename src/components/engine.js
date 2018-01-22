@@ -25,7 +25,7 @@ GameEngine.prototype = {
     this.CANVAS_CONTEXT.clearRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT)
   },
   drawEverything: function(){
-    this.drawPlayer()
+    this.drawPlayers()
   },
   animationFrame: function(callback){
     this.requestAnimationFrame = window.requestAnimationFrame(callback) ||
@@ -39,8 +39,9 @@ GameEngine.prototype = {
     this.CANVAS_CONTEXT.fillStyle = drawColor
     this.CANVAS_CONTEXT.fillRect(leftX, topY, width, height)
   },
-  drawPlayer: function(){
+  drawPlayers: function(){
     this.drawColorRectangle(window.PLAYER_ONE.posX, window.PLAYER_ONE.posY, this.PADDLE_THICKNESS, this.PADDLE_HEIGHT, this.PADDLE_COLOR)
+    this.drawColorRectangle(window.PLAYER_TWO.posX, window.PLAYER_TWO.posY, this.PADDLE_THICKNESS, this.PADDLE_HEIGHT, this.PADDLE_COLOR)
   },
 
 }

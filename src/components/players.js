@@ -3,7 +3,7 @@ window.PLAYER_ONE = {
   posY: 250
 }
 window.PLAYER_TWO = {
-  posX: 10,
+  posX: 780,
   posY: 250
 }
 
