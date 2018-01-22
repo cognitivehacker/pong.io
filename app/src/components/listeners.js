@@ -14,23 +14,24 @@ var Listeners = {
   },
   checkKey: function(e, player) {
     var keyID = e.keyCode || e.which
+    var speed = 10
     if (keyID === 38) { // Up arrow
-      player.posY = player.posY - 10
+      player.posY = player.posY - speed
       Listeners.outOfBounds(player)
       e.preventDefault()
     }
     if (keyID === 40) { // Down arrow
-      player.posY = player.posY + 10
+      player.posY = player.posY + speed
       Listeners.outOfBounds(player)
       e.preventDefault()
     }
     if (keyID === 39) { // Right arrow
-      player.posY = player.posY + 10
+      player.posY = player.posY + speed
       Listeners.outOfBounds(player)
       e.preventDefault()
     }
     if (keyID === 37) { // Left arrow
-      player.posY = player.posY - 10
+      player.posY = player.posY - speed
       Listeners.outOfBounds(player)
       e.preventDefault()
     }

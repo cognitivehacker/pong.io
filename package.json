@@ -7,10 +7,12 @@
     "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
-    "moment": "^2.20.1"
+    "moment": "^2.20.1",
+    "webpack-livereload-plugin": "^1.0.0"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js -p",
-    "server": "webpack-dev-server --inline --hot"
+    "server": "webpack-dev-server --inline --hot --watch",
+    "livereload": "webpack --watch"
   }
 }

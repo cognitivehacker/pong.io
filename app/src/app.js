@@ -6,5 +6,6 @@ import GameEngine from './components/engine'
 import {PLAYER_ONE, PLAYER_TWO} from './components/players'
 import Listeners from './components/listeners'
 
-GameEngine().render()
+const engine = GameEngine()
+engine.render()
 Listeners.addListeners()
