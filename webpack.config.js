@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const LiveReloadPlugin = require('webpack-livereload-plugin');
+const liveReloadPlugin = require('webpack-livereload-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, 'app'),
@@ -32,7 +32,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new LiveReloadPlugin({
+    new liveReloadPlugin({
       port: 35729
     })
   ]
