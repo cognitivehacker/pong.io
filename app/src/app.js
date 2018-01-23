@@ -2,10 +2,7 @@
 // var rightNow = moment().format('MMMM Do YYYY, h:mm:ss a');
 // console.log(rightNow);
 
-import GameEngine from './components/engine'
-import {PLAYER_ONE, PLAYER_TWO} from './components/players'
-import Listeners from './components/listeners'
+import GameEngine from './modules/game-engine/gameEngine'
 
-const engine = GameEngine()
-engine.render()
-Listeners.addListeners()
+const engine = new GameEngine()
+engine.execute()
