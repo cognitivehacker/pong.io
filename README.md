@@ -17,3 +17,12 @@ A client for a multiplayer pong game with websockets
 `npm run server`
 
 * the live reload serves they own file to the browser, so the app/dist is not updated, to update run `npm run build` or `npm run watch`
+
+## Running With Docker
+
+### Setup
+1. `$ docker network create pong-io`
+2. `$ docker-compose build && docker-compose run pong-io yarn install`
+
+### Run
+1. `$ docker-compose up`
