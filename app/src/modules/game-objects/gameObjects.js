@@ -1,11 +1,9 @@
-import gameWorld from './gameWorld'
-import players from './players'
+import GameWorld from './gameWorld'
+import Players from './players'
 
-var gameObjects = function(gameWorld, players){
+var GameObjects = function(gameWorld){
     return {
-      gameWorld: gameWorld,
-      players: players
+      gameWorld: new GameWorld()
     }
 }
-
-export default gameObjects
+export default GameObjects

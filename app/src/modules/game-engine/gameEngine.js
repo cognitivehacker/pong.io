@@ -1,12 +1,21 @@
-import gameObjects from '../game-objects/gameObjects'
-import graphicsEngine from '../graphics/graphicsEngine'
-import listeners from '../physics/listeners'
+import GraphicsEngine from '../graphics/graphicsEngine'
+import Listeners from '../physics/listeners'
+import GameObjects from '../game-objects/gameObjects'
 
 var GameEngine = function(){
   return {
+    setGraphicsEngine: function(graphicsEngine){
+      this.graphicsEngine = graphicsEngine
+    },
+    setListeners: function(listeners){
+      this.listeners = listeners
+    },
+    setGameObject: function(gameObjects){
+      this.gameObjects = gameObjects
+    },
     execute: function(){
-      graphicsEngine.render()
-      listeners.addListeners()
+      this.graphicsEngine.render()
+      this.listeners.addListeners()
     }
   }
 }

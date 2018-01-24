@@ -1,13 +1,13 @@
-window.PLAYER_ONE = {
-  posX: 10,
-  posY: 250
-}
-window.PLAYER_TWO = {
-  posX: 780,
-  posY: 250
+var Players = {
+  PLAYER_ONE: {
+    posX: 10,
+    posY: 250
+  },
+  PLAYER_TWO: {
+    posX: 780,
+    posY: 250
+  },
 }
 
-export default {
-  PLAYER_ONE,
-  PLAYER_TWO
-}
+window.PLAYERS = Players
+export default Players

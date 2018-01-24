@@ -1,21 +1,24 @@
-import gameWorld from '../game-objects/gameWorld'
+import GameObjects from '../game-objects/gameObjects'
 
-var graphicsEngine = function(){
+var GraphicsEngine = function(){
   return {
     render: function(){
-      // var engine = new graphicsEngine()
-      console.log(this)
+      // var engine = new GraphicsEngine()
+      var gameObject = new GameObjects()
+      this.GAME_OBJECT = gameObject
+      this.PLAYERS = window.PLAYERS
+      this.GAME_WORLD = gameObject.gameWorld
+
       this.clearEverything()
       this.drawEverything()
-
       this.animationFrame(this.render.bind(this))
     },
     clearEverything: function(){
-      gameWorld.CANVAS_CONTEXT.clearRect(0, 0, gameWorld.CANVAS_WIDTH, gameWorld.CANVAS_HEIGHT)
+      this.GAME_WORLD.CANVAS_CONTEXT.clearRect(0, 0, this.GAME_WORLD.CANVAS_WIDTH, this.GAME_WORLD.CANVAS_HEIGHT)
     },
     drawEverything: function(){
-      gameWorld.drawBackground()
-      gameWorld.drawPlayers()
+      this.drawBackground()
+      this.drawPlayers()
     },
     animationFrame: function(callback){
       this.requestAnimationFrame = window.requestAnimationFrame(callback) ||
@@ -23,20 +26,20 @@ var graphicsEngine = function(){
         window.mozRequestAnimationFrame(callback) ||
         window.oRequestAnimationFrame(callback) ||
         window.msRequestAnimationFrame(callback) ||
-        function(callback){ window.setTimeout(callback, 1000/gameWorld.FRAMES_PER_SECOND) }
+        function(callback){ window.setTimeout(callback, 1000/this.GAME_WORLD.FRAMES_PER_SECOND) }
     },
     drawBackground: function(){
-      this.drawColorRectangle(0, 0, gameWorld.CANVAS_WIDTH, gameWorld.CANVAS_HEIGHT, gameWorld.CANVAS_COLOR)
+      this.drawColorRectangle(0, 0, this.GAME_WORLD.CANVAS_WIDTH, this.GAME_WORLD.CANVAS_HEIGHT, this.GAME_WORLD.CANVAS_COLOR)
     },
     drawColorRectangle: function( leftX, topY, width, height, drawColor){
-      this.CANVAS_CONTEXT.fillStyle = drawColor
-      this.CANVAS_CONTEXT.fillRect(leftX, topY, width, height)
+      this.GAME_WORLD.CANVAS_CONTEXT.fillStyle = drawColor
+      this.GAME_WORLD.CANVAS_CONTEXT.fillRect(leftX, topY, width, height)
     },
     drawPlayers: function(){
-      this.drawColorRectangle(window.PLAYER_ONE.posX, window.PLAYER_ONE.posY, gameWorld.PADDLE_THICKNESS, gameWorld.PADDLE_HEIGHT, gameWorld.PADDLE_COLOR)
-      this.drawColorRectangle(window.PLAYER_TWO.posX, window.PLAYER_TWO.posY, gameWorld.PADDLE_THICKNESS, gameWorld.PADDLE_HEIGHT, gameWorld.PADDLE_COLOR)
+      this.drawColorRectangle(this.PLAYERS.PLAYER_ONE.posX, this.PLAYERS.PLAYER_ONE.posY, this.GAME_WORLD.PADDLE_THICKNESS, this.GAME_WORLD.PADDLE_HEIGHT, this.GAME_WORLD.PADDLE_COLOR)
+      this.drawColorRectangle(this.PLAYERS.PLAYER_TWO.posX, this.PLAYERS.PLAYER_TWO.posY, this.GAME_WORLD.PADDLE_THICKNESS, this.GAME_WORLD.PADDLE_HEIGHT, this.GAME_WORLD.PADDLE_COLOR)
     }
   }
 }
 
-export default graphicsEngine
+export default GraphicsEngine

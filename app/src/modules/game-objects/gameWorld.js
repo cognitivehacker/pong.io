@@ -1,6 +1,7 @@
-var gameWorld = function(){
+var GameWorld = function(){
 
   var FRAMES_PER_SECOND = 30
+  var CANVAS_COLOR = "black"
   var CANVAS_WIDTH = 800
   var CANVAS_HEIGHT = 600
   var PADDLE_THICKNESS = 10
@@ -20,8 +21,7 @@ var gameWorld = function(){
     ,PADDLE_COLOR
     ,CANVAS
     ,CANVAS_CONTEXT
-    ,CANVAS_CONTEXT
   }
 }
 
-export default gameWorld
+export default GameWorld
