@@ -13,6 +13,5 @@ RUN apt-get update && apt-get install -y \
   && rm -rf /var/lib/apt/lists/*
 
 RUN rm -fR /usr/local/bin/yarn && npm install -g yarn
-RUN yarn global add parcel-bundler
 
-CMD tail -f /dev/null
+CMD npm run server || tail -f /dev/null
