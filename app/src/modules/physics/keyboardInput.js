@@ -3,15 +3,23 @@ import Collision from './collision'
 var Keyboard = function(){
   return {
     checkKey: function(e, player) {
+
       var keyID = e.keyCode || e.which
       var speed = 10
+      console.log(keyID)
       var collision = new Collision()
-      if (keyID === 38) { // Up arrow
+      if (
+          keyID === 38 || // Up arrow
+          keyID === 33    // PgUp arrow
+        ) {
         player.posY = player.posY - speed
         collision.outOfBounds(player)
         e.preventDefault()
       }
-      if (keyID === 40) { // Down arrow
+      if (
+          keyID === 40 || // Down arrow
+          keyID === 34    // PgDown arrow
+        ) {
         player.posY = player.posY + speed
         collision.outOfBounds(player)
         e.preventDefault()
