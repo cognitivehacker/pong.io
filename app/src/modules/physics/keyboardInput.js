@@ -6,7 +6,7 @@ var Keyboard = function(){
 
       var keyID = e.keyCode || e.which
       var speed = 10
-      console.log(keyID)
+  
       var collision = new Collision()
       if (
           keyID === 38 || // Up arrow
