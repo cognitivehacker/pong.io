@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  pong-io:
+    container_name: pong-io
+    build: ./
+    ports:
+      - 8080:8080 # Http Port
+      - 35729:35729 # Socket Port
+    volumes:
+      - ./:/var/www
+
+networks:
+  default:
+    external:
+      name: pong-io
