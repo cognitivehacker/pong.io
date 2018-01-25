@@ -1,10 +1,11 @@
-var Collision = function(){
-  return {
-    outOfBounds: function(player){
-      if (player.posY > 500) player.posY = 500
-      if (player.posY < 0) player.posY = 0
-    }
-  }
+import gameWorld from '../game-objects/gameWorld'
+
+export const BOTTOM_LIMIT = gameWorld.CANVAS_HEIGHT
+export const TOP_LIMIT = 0
+
+const collision = {
+  outOfBoundsTop: (posY) => posY <= TOP_LIMIT ? true : false,
+  outOfBoundsBottom: (posY, objectHeight) => posY >= ( BOTTOM_LIMIT - objectHeight ) ? true : false
 }
 
-export default Collision
+export default collision
