@@ -1,5 +1,5 @@
-import graphicsEngine  from '../graphics/graphicsEngine'
 import listeners from '../physics/listeners'
+import graphicsEngine  from '../graphics/graphicsEngine'
 import gameObjects from '../game-objects/gameObjects'
 
 const GameEngine = {
@@ -7,9 +7,14 @@ const GameEngine = {
   listeners,
   gameObjects,
   run(){
-    this.graphicsEngine.render()
-    this.listeners.addListeners()
+    //this.listeners.addListeners()
+    this.gameLoop()
   },
+  gameLoop(){
+
+    this.physics.nextStep()
+    graphicsEngine.render()
+  }
 }
 
 export default GameEngine

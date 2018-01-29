@@ -1,3 +1,3 @@
-import PongIO from './modules/game-engine/gameEngine'
+import PongIO from './modules/gameEngine'
 
 PongIO.run()

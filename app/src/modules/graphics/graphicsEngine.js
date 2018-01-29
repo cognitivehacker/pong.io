@@ -1,13 +1,19 @@
-import GameObjects from '../game-objects/gameObjects'
 import GameWorld from '../game-objects/gameWorld'
+import GameObjects from '../game-objects/gameObjects'
+import GameActors from '../game-objects/gameActors'
 
 const GraphicsEngine = {
     render(){
       // var engine = new GraphicsEngine()
 
       this.GAME_OBJECT = GameObjects
-      this.PLAYERS = window.PLAYERS
+
       this.GAME_WORLD = GameWorld
+
+      GameActors.forEach( Actors => {
+        Actors.graphics.render()
+      })
+
 
       this.clearEverything()
       this.drawEverything()
