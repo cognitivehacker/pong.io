@@ -2,7 +2,7 @@ import {
   default as collision,
   TOP_LIMIT,
   BOTTOM_LIMIT
-} from '../modules/physics/collision'
+} from '../../lib/physics/collision'
 
 const speed = 10
 

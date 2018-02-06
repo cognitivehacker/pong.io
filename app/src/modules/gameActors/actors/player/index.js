@@ -1,8 +1,11 @@
 import state from './state'
 import render from './render'
+import listener from './listener'
+import Player from '../../../../models/player'
 
-export default class {
+export default class  extends Player{
   constructor(merge){
+    super()
     merge = merge || {}
 
     this.state = {}
@@ -15,4 +18,9 @@ export default class {
   render(canvas){
     render.draw(this.state, canvas)
   }
+
+  addListeners(){
+    listener.addListeners(this.state);
+  }
+
 }
