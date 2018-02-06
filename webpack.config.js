@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const liveReloadPlugin = require('webpack-livereload-plugin');
 
 function resolve (dir) {
-  return path.join(__dirname, '.', dir)
+  return
 }
 
 module.exports = {
@@ -18,7 +18,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
-      '@': resolve('app'),
+      '@': path.join(__dirname, '.', 'app'),
     }
   },
   devServer: {
