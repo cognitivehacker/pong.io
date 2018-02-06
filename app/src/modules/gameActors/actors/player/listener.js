@@ -1,5 +1,5 @@
-import keyboard from '../../../../../lib/periferic/keyboard'
-import { KEY_UP, KEY_PG_UP, KEY_DOWN, KEY_PG_DOWN } from '../../../../../lib/periferic/keyboard/keymap'
+import keyboard from '@/lib/periferic/keyboard'
+import { KEY_UP, KEY_PG_UP, KEY_DOWN, KEY_PG_DOWN } from '@/lib/periferic/keyboard/keymap'
 
 export default {
   addListeners(state) {

@@ -1,3 +1,4 @@
+/*
 import GameWorld from '../game-objects/gameWorld'
 
 export const BOTTOM_LIMIT = GameWorld.CANVAS_HEIGHT
@@ -11,3 +12,4 @@ const collision = {
 }
 
 export default collision
+*/

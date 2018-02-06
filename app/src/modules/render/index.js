@@ -1,4 +1,4 @@
-import RenderCanvas from '../../../lib/render/canvas'
+import RenderCanvas from '@/lib/render/canvas'
 
 const render = new RenderCanvas({
   target: 'canvas',

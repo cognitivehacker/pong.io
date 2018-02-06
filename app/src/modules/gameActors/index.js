@@ -1,4 +1,4 @@
-import gameActor from "../../../lib/gameActors"
+import gameActor from "@/lib/gameActors"
 
 import Player from "./actors/player"
 import Ball from "./actors/ball"
