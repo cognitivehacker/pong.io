@@ -4,4 +4,5 @@ export default {
   height: 200,
   width: 20,
   color: '#ffffff',
+  speed: 10,
 }

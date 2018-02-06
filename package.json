@@ -11,5 +11,8 @@
     "build": "webpack --config webpack.config.js -p",
     "watch": "webpack --config webpack.config.js -p --watch",
     "server": "webpack-dev-server --output-public-path=/build/ --hot --watch-poll"
+  },
+  "dependencies": {
+    "resolve": "^1.5.0"
   }
 }
