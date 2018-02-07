@@ -1,15 +1,11 @@
-/*
-import GameWorld from '../game-objects/gameWorld'
+import Canvas from 'Lib/render/canvas'
 
-export const BOTTOM_LIMIT = GameWorld.CANVAS_HEIGHT
+export const BOTTOM_LIMIT = Canvas.height
 export const TOP_LIMIT = 0
-
-// TODO MUDAR TUDO ISSO PRA LIB
 
 const collision = {
   outOfBoundsTop: (posY) => posY <= TOP_LIMIT ? true : false,
-  outOfBoundsBottom: (posY, objectHeight) => posY >= ( BOTTOM_LIMIT - objectHeight ) ? true : false
+  outOfBoundsBottom: (posY, objectHeight) => posY >= (BOTTOM_LIMIT - objectHeight) ? true : false
 }
 
 export default collision
-*/

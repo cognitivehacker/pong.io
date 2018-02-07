@@ -1,27 +1,26 @@
-import keyboard from '@/lib/periferic/keyboard'
-import { KEY_UP, KEY_PG_UP, KEY_DOWN, KEY_PG_DOWN } from '@/lib/periferic/keyboard/keymap'
+import keyboard from 'Lib/periferic/keyboard'
 
 export default {
-  addListeners(state) {
-    keyboard.keyDown((keyID, e)=>{
+  addListeners(player) {
+    keyboard.keyDown((keymap, keyID, e)=>{
       e.preventDefault()
       switch (true) {
-        case keyID === KEY_UP || keyID === KEY_PG_UP:
-          state.moveUp()
+        case keyID === keymap.KEY_UP || keyID === keymap.KEY_PG_UP:
+          player.moveUp()
           break;
-        case keyID === KEY_DOWN || keyID === KEY_PG_DOWN:
-          state.moveDown()
+        case keyID === keymap.KEY_DOWN || keyID === keymap.KEY_PG_DOWN:
+          player.moveDown()
           break;
       }
     });
-    keyboard.keyUp((keyID, e) => {
+    keyboard.keyUp((keymap, keyID, e) => {
       e.preventDefault()
       switch (true) {
-        case keyID === KEY_UP || keyID === KEY_PG_UP:
-          state.moveUp()
+        case keyID === keymap.KEY_UP || keyID === keymap.KEY_PG_UP:
+          player.moveUp()
           break;
-        case keyID === KEY_DOWN || keyID === KEY_PG_DOWN:
-          state.moveDown()
+        case keyID === keymap.KEY_DOWN || keyID === keymap.KEY_PG_DOWN:
+          player.moveDown()
           break;
       }
     });

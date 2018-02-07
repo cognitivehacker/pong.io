@@ -19,6 +19,8 @@ module.exports = {
     extensions: ['.js', '.json'],
     alias: {
       '@': path.join(__dirname, '.', 'app'),
+      'Lib': path.join(__dirname, '.', 'app/lib'),
+      'Modules': path.join(__dirname, '.', 'app/src/modules'),
     }
   },
   devServer: {

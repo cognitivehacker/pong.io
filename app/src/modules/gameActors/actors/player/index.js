@@ -20,7 +20,7 @@ export default class  extends Player{
   }
 
   addListeners(){
-    listener.addListeners(this.state);
+    listener.addListeners(this);
   }
 
 }
