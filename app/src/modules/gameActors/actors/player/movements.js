@@ -5,19 +5,14 @@ import {
 } from 'Lib/physics/collision'
 
 export default {
-  moveUp(player){
-    var state = player.state
-    state.posY = state.posY - state.speed
-    console.log(state)
-    return true
+  moveUp(state){
     if(!collision.outOfBoundsTop(state.posY, state.paddleHeight)){
       state.posY = state.posY - state.speed
     } else {
       state.posY = TOP_LIMIT
     }
   },
-  moveDown(player){
-    var state = player.state
+  moveDown(state){
     if(!collision.outOfBoundsBottom(state.posY, state.paddleHeight)){
       state.posY = state.posY + state.speed
     } else {

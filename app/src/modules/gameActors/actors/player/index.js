@@ -20,7 +20,7 @@ export default class {
 
   addListeners(){
     if(this.haveListener)
-      listener.addListeners(this)
+      listener.addListeners(this.state)
 
   }
 
