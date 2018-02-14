@@ -2,6 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const liveReloadPlugin = require('webpack-livereload-plugin');
 
+function resolve (dir) {
+  return
+}
+
 module.exports = {
   context: path.resolve(__dirname, 'app'),
   entry: {
@@ -10,6 +14,14 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'app/dist'),
     filename: '[name].bundle.js',
+  },
+  resolve: {
+    extensions: ['.js', '.json'],
+    alias: {
+      '@': path.join(__dirname, '.', 'app'),
+      'Lib': path.join(__dirname, '.', 'app/lib'),
+      'Modules': path.join(__dirname, '.', 'app/src/modules'),
+    }
   },
   devServer: {
     contentBase: __dirname + "/app/",
