@@ -19,9 +19,8 @@ export default class {
   }
 
   addListeners(){
-    debugger
     if(this.haveListener)
-      listener.addListeners(this.state)
+      listener.addListeners(this)
 
   }
 

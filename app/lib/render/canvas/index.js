@@ -13,6 +13,7 @@ export default class {
     this.color = config.color || "black"
     this.width = config.width || 800
     this.height= config.height || 600
+    this.framerate = config.framerate || 1000/60
 
   }
 
@@ -20,6 +21,16 @@ export default class {
     this.clearWorkSpace()
     this.drawBackground()
     this.drawActors(actors)
+    this.animationFrame(this.run.bind(this, actors))
+  }
+
+  animationFrame(callback){
+    this.requestAnimationFrame = window.requestAnimationFrame(callback) ||
+      window.webkitRequestAnimationFrame(callback) ||
+      window.mozRequestAnimationFrame(callback) ||
+      window.oRequestAnimationFrame(callback) ||
+      window.msRequestAnimationFrame(callback) ||
+    function(callback){ window.setTimeout(callback, 1000/60) }
   }
 
   clearWorkSpace(){

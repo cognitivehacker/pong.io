@@ -17,7 +17,6 @@ export default {
     }
   },
   gameLoop(){
-
-    this.render.run(this.gameActors.actors)
+    this.render.run(this.gameActors.actors)    
   },
 }
