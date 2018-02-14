@@ -1,22 +1,18 @@
-import {
-  default as collision,
-  TOP_LIMIT,
-  BOTTOM_LIMIT
-} from 'Lib/physics/collision'
+import collision from 'Lib/physics/collision'
 
 export default {
   moveUp(state){
-    if(!collision.outOfBoundsTop(state.posY, state.paddleHeight)){
+    if(!collision.outOfBoundsTop(state.posY, state.height)){
       state.posY = state.posY - state.speed
     } else {
-      state.posY = TOP_LIMIT
+      state.posY = collision.getTopLimit()
     }
   },
   moveDown(state){
-    if(!collision.outOfBoundsBottom(state.posY, state.paddleHeight)){
+    if(!collision.outOfBoundsBottom(state.posY, state.height)){
       state.posY = state.posY + state.speed
     } else {
-      state.posY = BOTTOM_LIMIT - state.paddleHeight
+      state.posY = collision.getBottomLimit() - state.height
     }
   }
 }
