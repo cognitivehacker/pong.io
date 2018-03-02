@@ -14,4 +14,8 @@ export default class{
     this.context.fillRect(posX , posY, width, height, color)
   }
 
+  degreesToRad(degrees){
+    return (Math.PI / 180) * degrees
+  }
+
 }
