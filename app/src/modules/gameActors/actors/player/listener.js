@@ -2,7 +2,7 @@ import keyboard from 'Lib/periferic/keyboard'
 import movements from './movements'
 
 export default {
-  addListeners(state) {
+  addListeners(state, socket) {
     keyboard.keyDown((keymap, keyID, e)=>{
       e.preventDefault()
       switch (true) {
@@ -11,6 +11,7 @@ export default {
           break
         case keyID === keymap.KEY_DOWN || keyID === keymap.KEY_PG_DOWN:
           movements.moveDown(state)
+          socket.emit('keydown', 'asdasdasd')
           break
       }
     })
@@ -22,6 +23,7 @@ export default {
           break
         case keyID === keymap.KEY_DOWN || keyID === keymap.KEY_PG_DOWN:
           movements.moveDown(state)
+          socket.emit('keydown', 'asdasdasd')
           break
       }
     })

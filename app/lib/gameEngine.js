@@ -10,6 +10,9 @@ export default {
     this.gameWorld.height = render.height
     this.gameWorld.width = render.width
   },
+  setSocket(socket){
+    this.socket = socket
+  },
   run(){
     this.initListeners()
     this.gameLoop()
@@ -18,7 +21,7 @@ export default {
     for ( var i in this.gameActors.actors ) {
       let actor = this.gameActors.actors[i]
       if(typeof actor.addListeners === 'function')
-        actor.addListeners()
+        actor.addListeners(this.socket)
     }
   },
   gameLoop(){

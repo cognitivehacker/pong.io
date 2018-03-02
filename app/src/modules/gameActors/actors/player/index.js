@@ -18,9 +18,9 @@ export default class {
     render.draw(this.state, canvas)
   }
 
-  addListeners(){
+  addListeners(socket){
     if(this.haveListener)
-      listener.addListeners(this.state)
+      listener.addListeners(this.state, socket)
 
   }
 
