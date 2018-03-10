@@ -1,4 +1,4 @@
-export default class{
+export default class {
   constructor(config){
     this.target = document.getElementById(config.target)
     this.context = this.target.getContext(config.context)

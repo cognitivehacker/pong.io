@@ -8,10 +8,11 @@ export default {
       switch (true) {
         case keyID === keymap.KEY_UP || keyID === keymap.KEY_PG_UP:
           movements.moveUp(state)
+          socket.emit('keyUp', { id: socket.id, others: 'asasasdasdad'})
           break
         case keyID === keymap.KEY_DOWN || keyID === keymap.KEY_PG_DOWN:
           movements.moveDown(state)
-          socket.emit('keydown', 'asdasdasd')
+          socket.emit('keyDown', { id: socket.id, others: 'asasasdasdad'})
           break
       }
     })
@@ -20,10 +21,11 @@ export default {
       switch (true) {
         case keyID === keymap.KEY_UP || keyID === keymap.KEY_PG_UP:
           movements.moveUp(state)
+          socket.emit('keyUp', { id: socket.id, others: 'asasasdasdad'})
           break
         case keyID === keymap.KEY_DOWN || keyID === keymap.KEY_PG_DOWN:
           movements.moveDown(state)
-          socket.emit('keydown', 'asdasdasd')
+          socket.emit('keyDown', { id: socket.id, others: 'asasasdasdad'})
           break
       }
     })
