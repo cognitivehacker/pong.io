@@ -1,13 +1,14 @@
 export default {
-  add(id, actor){
+  add(actor){
 
     if(typeof actor.addListeners !== 'function')
       actor.addListeners = function(){}
 
-    this.actors[id] = actor
+    this.actors[actor.id] = actor
 
   },
   actors: {
+
 
   }
 }

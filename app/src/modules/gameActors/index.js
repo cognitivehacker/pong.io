@@ -2,8 +2,10 @@ import gameActor from "Lib/gameActors"
 import Player from "./actors/player"
 import Ball from "./actors/ball"
 
-gameActor.add('player-1', new Player({}, true))
-gameActor.add('player-2', new Player({ posX: 780 }) )
-gameActor.add('ball', new Ball())
+import pListener from './actors/player/listener'
+
+gameActor.add( new Player('player-1', {}, pListener.playerOne ))
+gameActor.add( new Player('player-2', { posX: 780 }, pListener.playerTwo))
+gameActor.add( new Ball('ball'))
 
 export default gameActor

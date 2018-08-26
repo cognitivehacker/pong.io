@@ -1,9 +1,9 @@
 import state from './state'
 import render from './render'
-import listener from './listener'
 
 export default class {
-  constructor(merge, haveListener = false){
+  constructor(id, merge, listeners){
+    this.id = id
     merge = merge || {}
     this.state = {}
 
@@ -11,7 +11,8 @@ export default class {
       this.state[i] = typeof merge[i] === 'undefined' ? state[i] : merge[i]
     }
 
-    this.haveListener = haveListener
+    this.listeners = listeners
+
   }
 
   render(canvas){
@@ -19,9 +20,7 @@ export default class {
   }
 
   addListeners(socket){
-    if(this.haveListener)
-      listener.addListeners(this.state, socket)
-
+    this.listeners(this.id, this.state, socket)
   }
 
 }

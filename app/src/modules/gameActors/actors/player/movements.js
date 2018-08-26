@@ -1,5 +1,4 @@
 import collision from 'Lib/physics/collision'
-
 export default {
   moveUp(state){
     if(!collision.outOfBoundsTop(state.posY, state.height)){

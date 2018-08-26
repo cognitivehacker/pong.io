@@ -2,7 +2,8 @@ import state from './state'
 import render from './render'
 
 export default class {
-  constructor(merge){
+  constructor(id, merge){
+    this.id = id
     merge = merge || {}
     this.state = {}
     for ( var i in state ){
